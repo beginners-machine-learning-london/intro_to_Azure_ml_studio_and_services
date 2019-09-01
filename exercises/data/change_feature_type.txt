@@ -1,0 +1,14 @@
+status_checking
+credit_history
+purpose 
+savings_amt
+emp_years
+status_sex
+other_debts
+property
+other_installments
+housing_status
+job_type
+own_telephone
+foreign_worker
+credit_risk

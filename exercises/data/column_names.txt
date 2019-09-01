@@ -1,0 +1,1 @@
+status_checking, loan_duration, credit_history, purpose, credit_amount, savings_amt, emp_years, percent_disp_income, status_sex, other_debts, residence_since, property, age, other_installments, housing_status, num_credits, job_type, num_dependant, own_telephone, foreign_worker, credit_risk
