@@ -11,7 +11,6 @@
 # See: http://azure.microsoft.com/en-us/documentation/articles/python-how-to-install/
 
 import urllib
-# If you are using Python 3+, import urllib instead of urllib2
 
 import json
 import time
@@ -20,7 +19,7 @@ from azure.storage.blob import *
 def printHttpError(httpError):
     print("The request failed with status code: " + str(httpError.code))
 
-    # Print the headers - they include the requert ID and the timestamp, which are useful for debugging the failure
+    # Print the headers - they include the request ID and the timestamp, which are useful for debugging the failure
     print(httpError.info())
 
     print(json.loads(httpError.read()))
@@ -31,8 +30,7 @@ def saveBlobToFile(blobUrl, resultsLabel):
     output_file = "myresults.csv" # Replace this with the location you would like to use for your output file
     print("Reading the result from " + blobUrl)
     try:
-        # If you are using Python 3+, replace urllib2 with urllib.request in the following code
-        response = urllib.requert.urlopen(blobUrl)
+        response = urllib.request.urlopen(blobUrl)
     except urllib.error.HTTPError as error:
         printHttpError(error)
         return
@@ -77,12 +75,12 @@ def uploadFileToBlob(input_file, input_blob_name, storage_container_name, storag
 
 def invokeBatchExecutionService():
 
-    storage_account_name = "mystorageacct" # Replace this with your Azure Storage Account name
-    storage_account_key = "Dx9WbMIThAvXRQWap/aLnxT9LV5txxw==" # Replace this with your Azure Storage Key
-    storage_container_name = "mycontainer" # Replace this with your Azure Storage Container name
+    storage_account_name = "YOUR_OWN_AZURE_STORAGE_ACCOUNT" # Replace this with your Azure Storage Account name
+    storage_account_key = "YOUR_OWN_STORAGE_KEY" # Replace this with your Azure Storage Key
+    storage_container_name = "YOUR_OWN_CONTAINER" # Replace this with your Azure Storage Container name
     connection_string = "DefaultEndpointsProtocol=https;AccountName=" + storage_account_name + ";AccountKey=" + storage_account_key
-    api_key = "abc123" # Replace this with the API key for the web service
-    url = "https://ussouthcentral.services.azureml.net/workspaces/f806f4b064d9470588ec096d9dc9a10e/services/b64ff514a5c7471f883dedddfaed9250/jobs"
+    api_key = "YOUR_OWN_API_KEY" # Replace this with the API key for the web service
+    url = "YOUR_OWN_API_URL"
 
 
 
@@ -109,12 +107,11 @@ def invokeBatchExecutionService():
     headers = { "Content-Type":"application/json", "Authorization":("Bearer " + api_key)}
     print("Submitting the job...")
 
-    # If you are using Python 3+, replace urllib2 with urllib.request in the following code
 
     # submit the job
     req = urllib.request.Request(url + "?api-version=2.0", body, headers)
     try:
-        response = urllib.requert.urlopen(req)
+        response = urllib.request.urlopen(req)
     except urllib.error.HTTPError as error:
         printHttpError(error)
         return
@@ -124,12 +121,11 @@ def invokeBatchExecutionService():
     print("Job ID: " + job_id)
 
 
-    # If you are using Python 3+, replace urllib2 with urllib.request in the following code
     # start the job
     print("Starting the job...")
     req = urllib.request.Request(url + "/" + job_id + "/start?api-version=2.0", "", headers)
     try:
-        response = urllib.requert.urlopen(req)
+        response = urllib.request.urlopen(req)
     except urllib.error.HTTPError as error:
         printHttpError(error)
         return
@@ -138,11 +134,10 @@ def invokeBatchExecutionService():
 
     while True:
         print("Checking the job status...")
-	    # If you are using Python 3+, replace urllib2 with urllib.request in the follwing code
         req = urllib.request.Request(url2, headers = { "Authorization":("Bearer " + api_key) })
 
         try:
-            response = urllib.requert.urlopen(req)
+            response = urllib.request.urlopen(req)
         except urllib.error.HTTPError as error:
             printHttpError(error)
             return    
