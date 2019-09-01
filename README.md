@@ -45,6 +45,10 @@ The dataset for this workshop can be obtained via UCI. However, a static copy is
 - **[Machine learning algorithm cheat sheet for Azure Machine Learning Studio](https://docs.microsoft.com/en-us/azure/machine-learning/studio/algorithm-cheat-sheet)**: The Azure Machine Learning Studio Algorithm Cheat Sheet helps you choose the right algorithm for a predictive analytics model.
 - **[Machine learning basics with algorithm examples](https://docs.microsoft.com/en-us/azure/machine-learning/studio/basics-infographic-with-algorithm-examples)**: Download this easy-to-understand infographic overview of machine learning basics to learn about popular algorithms used to answer common machine learning questions.
 - **[Deploy an Azure Machine Learning Studio web service](https://docs.microsoft.com/en-us/azure/machine-learning/studio/publish-a-machine-learning-web-service)**: Azure Machine Learning Studio enables you to build and test a predictive analytic solution. Learn here how you can deploy your trained models as a web service.
+- **[Retrain and deploy a machine learning model](https://docs.microsoft.com/en-us/azure/machine-learning/studio/retrain-machine-learning-model)**: Retraining is one way to ensure machine learning models stay accurate and based on the most relevant data available. This article shows how to retrain and deploy a machine learning model as a new web service in Studio. 
+- **[Retraining an Azure Machine Learning Application](http://aihelpwebsite.com/Blog/EntryId/1022/Retraining-an-Azure-Machine-Learning-Application)**:You can  programmatically retrain an Azure Machine Learning Web Service thereby improving the predictions of your predictive applications.
+
+
 
 ## Collaboration, Questions and Discussions
 
